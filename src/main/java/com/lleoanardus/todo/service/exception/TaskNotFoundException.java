@@ -1,7 +1,7 @@
 package com.lleoanardus.todo.service.exception;
 
-public class TaskNotFound extends RuntimeException{
-    public TaskNotFound() {
+public class TaskNotFoundException extends RuntimeException{
+    public TaskNotFoundException() {
         super("Task not found");
     }
 }

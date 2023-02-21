@@ -4,6 +4,7 @@ import com.lleoanardus.todo.dto.TaskGetDTO;
 import com.lleoanardus.todo.dto.TaskInsertDTO;
 import com.lleoanardus.todo.model.Task;
 import com.lleoanardus.todo.repository.TaskRepository;
+import com.lleoanardus.todo.service.exception.TaskNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +48,6 @@ public class TaskService {
     }
 
     private Task findByIdOrElseThrowTaskNotFoundException(String id) {
-        return repository.findById(id).orElseThrow();
+        return repository.findById(id).orElseThrow(TaskNotFoundException::new);
     }
 }
