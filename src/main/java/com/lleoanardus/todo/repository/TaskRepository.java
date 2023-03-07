@@ -4,9 +4,9 @@ import com.lleoanardus.todo.model.Task;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
 @Repository
 public interface TaskRepository extends MongoRepository<Task, String> {
-    Optional<Task> findByIsCompleted(Boolean isCompleted);
+    List<Task> findByIsCompleted(Boolean isCompleted);
 }

@@ -41,7 +41,7 @@ class TaskServiceTest {
 
         when(repository.findAll()).thenReturn(List.of(task));
         when(repository.findById(TaskFactory.ID)).thenReturn(Optional.of(task));
-        when(repository.findByIsCompleted(TaskFactory.IS_COMPLETED)).thenReturn(Optional.of(task));
+        when(repository.findByIsCompleted(TaskFactory.IS_COMPLETED)).thenReturn(List.of(task));
         when(repository.save(taskInsertDTO.toTask())).thenReturn(task);
         doNothing().when(repository).deleteById(TaskFactory.ID);
     }
