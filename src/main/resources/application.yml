@@ -1,4 +1,8 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/tasks
+      uri: mongodb://localhost:27017/task-manager
+
+springdoc:
+  swagger-ui:
+    tagsSorter: alpha
